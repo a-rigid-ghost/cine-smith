@@ -11,7 +11,13 @@ IDEA_PROMPT = "Top 10 Places to visit in Schengen Area"
 AUDIO_SPEED = 200
 
 def main():
-    dialogue = get_dialogue(idea_prompt=IDEA_PROMPT)
+    # For actual ChatGPT invocation to generate dialogue
+    # dialogue = get_dialogue(idea_prompt=IDEA_PROMPT) 
+
+    # For Mock dialogue generation
+    dialogue = open(os.path.join(os.path.dirname(__file__), 'data/sample_chatgpt_response.txt'), "r").read()
+    print(dialogue)
+    
     filename = f"audio_file_{IDEA_PROMPT}.mp3"
     convert_text_to_speech(dialogue, AUDIO_SPEED, filename)
 
