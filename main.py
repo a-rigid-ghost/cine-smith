@@ -12,6 +12,7 @@ AUDIO_SPEED = 200
 
 def main():
     dialogue = get_dialogue(idea_prompt=IDEA_PROMPT)
-    convert_text_to_speech(dialogue, AUDIO_SPEED)
+    filename = f"audio_file_{IDEA_PROMPT}.mp3"
+    convert_text_to_speech(dialogue, AUDIO_SPEED, filename)
 
 main()

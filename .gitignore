@@ -1,1 +1,2 @@
-.Pipfile.lock
+*.lock
+*audio_file_*
