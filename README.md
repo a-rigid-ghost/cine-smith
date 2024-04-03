@@ -6,7 +6,10 @@ App to automatically generate short format content
 * Install `python`, `pip` and `pipenv` if not already present locally.
 
 * Run the following to install dependencies first
-
+```
+pipenv install
+```
+* Then execute the main.py script
 ```
 pipenv run python main.py
 ```
