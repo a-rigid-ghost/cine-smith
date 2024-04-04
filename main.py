@@ -1,7 +1,8 @@
 import os
 
 from text_generator.dialogue_creator import get_dialogue
-from text_generator.constants import OPENAI_API_KEY
+from constants import OPENAI_API_KEY
+from google_image_fetcher.image_fetcher import fetch_image_from_prompt
 
 from audio_generator.text_to_speech import convert_text_to_speech
 
@@ -38,7 +39,11 @@ def main():
 
     print(f"Duration in seconds: {audio_duration}")
     
-
-
+    """
+    For actual google search of images
+    """
+    # print("Google images from prompt")
+    # fetch_image_from_prompt("high quality cats", dirname)
+    
 
 main()

@@ -8,6 +8,8 @@ pyttsx3 = "*"
 requests = "*"
 openai = "*"
 mutagen = "*"
+google-images-search = "*"
+windows-curses = "*"
 
 [dev-packages]
 
