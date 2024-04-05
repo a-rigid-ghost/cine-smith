@@ -2,3 +2,5 @@
 *audio_file_*
 api_keys.py
 images/*
+resized_images/*
+videos/*

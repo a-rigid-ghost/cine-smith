@@ -3,6 +3,7 @@ import os
 from text_generator.dialogue_creator import get_dialogue
 from constants import OPENAI_API_KEY
 from google_image_fetcher.image_fetcher import fetch_image_from_prompt
+from video_synthesizer.images_to_video import images_to_video
 
 from audio_generator.text_to_speech import convert_text_to_speech
 
@@ -23,6 +24,7 @@ def main():
     # For Mock dialogue generation
     dialogue = open(os.path.join(dirname, 'data/sample_chatgpt_response.txt'), "r").read()
 
+    dialogue = "Cats are pet animals. They are fat and are nasty bitches. I like them from afar. I do not want to mess with them."
     print("Text Generation complete.")
     print(f"Dialogue: {dialogue}")
     
@@ -44,6 +46,10 @@ def main():
     """
     # print("Google images from prompt")
     # fetch_image_from_prompt("high quality cats", dirname)
+
+    image_filepath = os.path.join(dirname, "images")
+    print(image_filepath)
+    images_to_video(image_filepath)
     
 
 main()
