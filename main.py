@@ -4,19 +4,19 @@ from text_generator.dialogue_creator import get_dialogue
 from constants import OPENAI_API_KEY, GENERATED_MEDIA_FOLDER
 from google_image_fetcher.image_fetcher import fetch_image_from_prompt
 from video_synthesizer.images_to_video import images_to_video
+from dotenv import load_dotenv
 
 from audio_generator.text_to_speech import convert_text_to_speech
 
 from mutagen.wave import WAVE
 
-# Login -> https://platform.openai.com/api-keys -> Generate Key -> Replace here
-os.environ[OPENAI_API_KEY] = "<YOUR_API_KEY>"
 IDEA_PROMPT = "Top 10 Places to visit in Schengen Area"
 AUDIO_SPEED = 200
 
 def main():
     dirname = os.path.dirname(__file__)
     media_dirname = os.path.join(dirname, GENERATED_MEDIA_FOLDER)
+    load_dotenv()
 
     print("Starting Text Generation...")
     # For actual ChatGPT invocation to generate dialogue
@@ -34,11 +34,11 @@ def main():
     print("Starting Audio Generation...")
 
     audio_filename = f"audio_file.mp3"
-    convert_text_to_speech(dialogue, AUDIO_SPEED, audio_filename)
+    convert_text_to_speech(dialogue, AUDIO_SPEED, media_dirname, audio_filename)
 
     print("Audio Generation complete.")
 
-    audio_filepath = os.path.join(dirname, GENERATED_MEDIA_FOLDER, "audios", audio_filename)
+    audio_filepath = os.path.join(media_dirname, "audios", audio_filename)
     audio = WAVE(audio_filepath)
     audio_duration = int(audio.info.length)
 

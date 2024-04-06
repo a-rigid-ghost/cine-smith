@@ -1,4 +1,4 @@
 *.lock
 *audio_file_*
-api_keys.py
+.env
 generated_media/*

@@ -11,6 +11,7 @@ mutagen = "*"
 google-images-search = "*"
 windows-curses = "*"
 moviepy = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
